@@ -1,47 +1,52 @@
-/**
- *  récupération des éléments HTML
- */
-const sectionPorfolio = document.querySelector("#portfolio");
-console.log("sectionPorfolio", sectionPorfolio);
-
-const getData = async (url) => {
+// api.js
+export const fetchData = async (url, options = { method: "GET" }) => {
   try {
-    const response = await fetch(url);
+    const response = await fetch(url, options);
     if (!response.ok) {
-      throw new Error(`Erreur HTTP ! statut: ${response.status}`);
+      throw new Error(`Erreur ${response.status} lors de l'accès à ${url}`);
     }
-    console.log("response", response);
-    const data = await response.json();
-    console.log("Données reçues dans getData:", data);
-    return data;
+    return response.json();
   } catch (error) {
-    console.error("Erreur lors de la récupération des données: ", error);
+    console.error(`Erreur lors de la récupération des données : ${error}`);
+    throw error;
   }
 };
 
-const displayData = async (url) => {
-  const data = await getData(url);
-  if (data && Array.isArray(data) && data.length > 0) {
-    const divGallery = document.createElement("div");
-    divGallery.classList.add("gallery");
+export const getWorks = () => fetchData("http://localhost:5678/api/works");
 
-    data.forEach((item) => {
-      const { id, title, imageUrl } = item;
-      console.log("id", id);
-      console.log("title", title);
-      console.log("imageUrl", imageUrl);
-      const figure = document.createElement("figure");
-      figure.innerHTML = `
-        <img src="${imageUrl}" alt="${title}">
-        <figcaption>${title}</figcaption>
-      `;
-      // Ajout du nouvel élément figure à la divGallery
-      divGallery.appendChild(figure);
+export const getCategories = () =>
+  fetchData("http://localhost:5678/api/categories");
+
+export const getLogin = (options) =>
+  fetchData("http://localhost:5678/api/users/login", options);
+
+export const getFullCategories = async () => {
+  const categories = await getCategories();
+  const allCategory = { id: null, name: "Tous" };
+  const fullCategories = [allCategory, ...categories];
+  console.log("fullCategories", fullCategories);
+  return fullCategories;
+};
+
+export const deleteWork = async (workId) => {
+  const token = localStorage.getItem("userToken");
+  console.log("token", token);
+  try {
+    const response = await fetch(`http://localhost:5678/api/works/${workId}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     });
-
-    // Ajout de la divGallery à la section "portfolio"
-    sectionPorfolio.appendChild(divGallery);
+    if (!response.ok) {
+      throw new Error(
+        `Erreur ${response.status} lors de la suppression de l'œuvre ${workId}`
+      );
+    }
+    console.log(`Œuvre ${workId} supprimée avec succès`);
+    return true;
+  } catch (error) {
+    console.error(`Erreur lors de la suppression de l'œuvre : ${error}`);
+    return false;
   }
 };
-
-displayData("http://localhost:5678/api/works");
