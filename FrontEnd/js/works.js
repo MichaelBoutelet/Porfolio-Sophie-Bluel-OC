@@ -1,3 +1,5 @@
+import { getWorks, getFullCategories } from "../data/api.js";
+
 const gallery = document.querySelector(".gallery");
 
 // Fonction pour afficher les œuvres dans la galerie
