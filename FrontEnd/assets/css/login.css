@@ -1,0 +1,61 @@
+.login {
+  width: 35%;
+  margin: 160px auto;
+}
+
+.login > * {
+  text-align: center;
+}
+
+.login form {
+  text-align: left;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login form label {
+  margin: 1.5em 0; /* Uniformise les marges autour du label */
+}
+
+.login form input {
+  height: 50px;
+  font-size: 1.2em;
+  border: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.09);
+  padding: 0 10px; /* Ajout d'un padding pour l'input */
+  border-radius: 5px; /* Ajout d'un border-radius pour les inputs */
+}
+
+.login form input[type="submit"] {
+  font-family: "Syne", sans-serif; /* Police de secours en cas de non-chargement de 'Syne' */
+  font-weight: 700;
+  color: white;
+  background-color: #1d6154;
+  margin: 2em auto;
+  width: 210px;
+  height: 40px;
+  border-radius: 60px; /* Garder le style arrondi pour le bouton */
+  cursor: pointer; /* Style du curseur pour indiquer la possibilité de cliquer */
+  transition: background-color 0.3s; /* Transition pour l'effet au survol */
+}
+
+.login form input[type="submit"]:hover {
+  background-color: darken(#1d6154, 10%); /* Assombrir le bouton au survol */
+}
+
+.login a {
+  margin: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .login {
+    width: 80%; /* Ajustement de la largeur sur les écrans plus petits */
+  }
+}
+
+#errorMessage {
+  color: red;
+  margin: 10px 0;
+  text-align: center;
+}

@@ -1,12 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
+    <title>Sophie Bluel - Architecte d'intérieur</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href=".assets/login.css" />
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="description" content="Site de Sophie Bluel" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/login.css" />
+
+    <!-- <link rel="stylesheet" href="./assets/modal.css" /> -->
   </head>
   <body>
-    <h1>je suis un test </h1>
+    <header>
+      <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
+      <nav>
+        <ul>
+          <li><a href="./index.html#porfolio">projets</a></li>
+          <li><a href="./index.html#contact">contact</a></li>
+          <li><a href="./login.html" id="log">login</a></li>
+          <li><img src="./assets/icons/instagram.png" alt="Instagram" /></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Section de Connexion -->
+      <section class="login">
+        <h2>Log In</h2>
+        <form id="formData">
+          <label for="email">E-mail</label>
+          <input id="email" type="email" name="email" />
+          <label for="password">Mot de passe</label>
+          <input id="password" type="password" name="password" />
+          <div id="errorMessage"></div>
+          <input type="submit" value="Se connecter" />
+          <a href="#">Mot de passe oublié</a>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <nav>
+        <ul>
+          <li>Mentions Légales</li>
+        </ul>
+      </nav>
+    </footer>
+
+    <script
+      crossorigin="anonymous"
+      type="module"
+      src="./assets/js/login.js"
+    ></script>
   </body>
 </html>
