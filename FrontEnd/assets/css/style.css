@@ -293,7 +293,7 @@ footer nav ul {
 /* CSS pour le conteneur noir */
 #black-container {
   background-color: #000000;
-  width: 100vw; /* Assurez-vous que le conteneur s'étend sur toute la largeur */
+  width: 100vw;
   height: 59px;
   display: flex;
   justify-content: center;
@@ -314,10 +314,10 @@ footer nav ul {
 }
 
 .banner p {
-  color: #ffffff; /* Assurez-vous que le texte est bien visible sur fond noir */
+  color: #ffffff;
   display: flex;
   align-items: center;
-  font-size: 16px; /* Ajustez selon vos besoins */
+  font-size: 16px; 
 }
 
 .banner i {
