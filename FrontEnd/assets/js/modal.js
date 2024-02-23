@@ -115,40 +115,6 @@ arrowBack.addEventListener("click", () => {
   photoGalleryModal.classList.remove("hidden");
 });
 
-const updateSubmitButton = () => {
-  // Sélectionnez les éléments requis
-  const photoUploadInput = document.getElementById("photoUploadInput");
-  const photoTitleInput = document.getElementById("photoTitle");
-  const photoCategorySelect = document.getElementById("photoCategory");
-  const submitButton = document.getElementById("submitPhoto");
-
-  // Vérifiez si les éléments requis sont remplis
-  const isInputValid =
-    photoUploadInput.value &&
-    photoTitleInput.value &&
-    photoCategorySelect.value;
-
-  // Active ou désactive le bouton "Valider" en fonction de la validité des entrées
-  if (isInputValid) {
-    submitButton.classList.remove("inactive");
-    submitButton.disabled = false;
-  } else {
-    submitButton.classList.add("inactive");
-    submitButton.disabled = true;
-  }
-};
-
-// Ajout un écouteur d'événement pour chaque élément requis
-document
-  .getElementById("photoUploadInput")
-  .addEventListener("input", updateSubmitButton);
-document
-  .getElementById("photoTitle")
-  .addEventListener("input", updateSubmitButton);
-document
-  .getElementById("photoCategory")
-  .addEventListener("input", updateSubmitButton);
-
 photoUploadInput.addEventListener("change", (e) => {
   if (e.target.files && e.target.files[0]) {
     const file = e.target.files[0];
@@ -168,7 +134,7 @@ photoUploadInput.addEventListener("change", (e) => {
   }
   updateButtonState();
 });
-// Sélectionnez l'élément select
+// Sélectionne l'élément select
 const photoCategorySelect = document.getElementById("photoCategory");
 
 // Fonction pour afficher les catégories dans le select

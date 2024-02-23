@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // gestion des modals
   const addPhotoButton = document.getElementById("openPhotoAddModal");
 
-  // verifier si l'utilisateur est connecté
+  // verifie si l'utilisateur est connecté
   const userToken = localStorage.getItem("userToken");
   if (userToken) {
     loginBanner.style.display = "flex";
@@ -100,7 +100,7 @@ const categoryClicked = (categoryId, works) => {
 export const displayCategories = (categories, works) => {
   const isFiltres = document.querySelector(".filtres");
 
-  // verifier si l'utilisateur est connecté
+  // verifie si l'utilisateur est connecté
   const userToken = localStorage.getItem("userToken");
 
   if (!userToken) {
