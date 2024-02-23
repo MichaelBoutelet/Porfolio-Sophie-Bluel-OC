@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+css/<!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -10,53 +10,50 @@
       href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap"
       rel="stylesheet"
     />
-    <meta name="description" content="Site de Sophie Bluel" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="stylesheet" href="./assets/css/login.css" />
-
-    <!-- <link rel="stylesheet" href="./assets/modal.css" /> -->
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/login.css" />
   </head>
   <body>
     <header>
       <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
       <nav>
         <ul>
-          <li><a href="./index.html#porfolio">projets</a></li>
-          <li><a href="./index.html#contact">contact</a></li>
-          <li><a href="./login.html" id="log">login</a></li>
-          <li><img src="./assets/icons/instagram.png" alt="Instagram" /></li>
+          <a href="index.html#portfolio"><li>Projets</li></a>
+          <a href="index.html#contact"><li>Contact</li></a>
+          <a href="#"><li>Login</li></a>
+          <li><img src="assets/icons/instagram.png" alt="Instagram" /></li>
         </ul>
       </nav>
     </header>
-
     <main>
-      <!-- Section de Connexion -->
-      <section class="login">
-        <h2>Log In</h2>
-        <form id="formData">
-          <label for="email">E-mail</label>
-          <input id="email" type="email" name="email" />
-          <label for="password">Mot de passe</label>
-          <input id="password" type="password" name="password" />
-          <div id="errorMessage"></div>
-          <input type="submit" value="Se connecter" />
-          <a href="#">Mot de passe oublié</a>
-        </form>
-      </section>
+      <h2>Log In</h2>
+      <form class="login-form">
+        <div class="form-container">
+          <label class="form-label">Email : </label>
+          <input
+            class="form-input form-padding"
+            type="email"
+            id="email"
+            placeholder=""
+            name="email"
+            required
+          />
+          <label class="form-label">Mot de passe : </label>
+          <input
+            class="form-input form-padding"
+            type="password"
+            id="password"
+            placeholder=""
+            name="password"
+            required
+          />
+          <div class="error-message"></div>
+          <button class="form-button" type="submit">Se connecter</button>
+        </div>
+      </form>
+      <a href="#"><p class="forgot-password">Mot de passe oublié</p></a>
     </main>
-
-    <footer>
-      <nav>
-        <ul>
-          <li>Mentions Légales</li>
-        </ul>
-      </nav>
-    </footer>
-
-    <script
-      crossorigin="anonymous"
-      type="module"
-      src="./assets/js/login.js"
-    ></script>
   </body>
+  <script type="module" src="assets/js/login.js"></script>
 </html>

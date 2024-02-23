@@ -1,0 +1,266 @@
+/* Style pour #modalGallery */
+.modal {
+  position: fixed;
+  top: calc(50% - 315px);
+  left: calc(50% - 315px);
+  z-index: 2;
+  width: 630px;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+}
+
+.modal_button {
+  all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  font-family: "Syne";
+  font-weight: 700;
+  color: white;
+  background-color: #1d6154;
+  margin: 2em auto;
+  width: 180px;
+  text-align: center;
+  border-radius: 60px;
+  height: 36px;
+  margin: 30px auto 45px auto;
+  cursor: pointer;
+}
+
+/* Style pour #overlay */
+/* Overlay */
+.photo-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex; /* Initialement caché */
+}
+
+/* Modale de Base */
+.photo-modal {
+  position: fixed;
+  top: calc(50% - 344px);
+  left: calc(50% - 315px);
+  z-index: 1010;
+  width: 630px;
+  /* height: 688px; */
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  display: block; /* Initialement caché */
+}
+
+/* Fermeture et Retour */
+.modal-close,
+.modal-back {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 1.5em;
+}
+
+.modal-back {
+  left: 20px;
+  right: auto;
+}
+
+/* Titre de la Modale */
+.modal-title {
+  color: #000;
+  text-align: center;
+  font-family: " Work Sans";
+  font-size: 2.5em;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 60px;
+}
+
+/* Galerie dans la Modale */
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 30px;
+  margin-left: 100px;
+  margin-right: 100px;
+  height: 450px;
+  overflow-y: auto;
+}
+.image-item {
+  position: relative;
+}
+.image-item img {
+  width: 78px;
+  margin-bottom: 25px;
+}
+.fa-trash-can {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  cursor: pointer;
+  background: #000;
+  color: #fff;
+  padding: 4px;
+  border-radius: 3px;
+  font-size: 0.8em;
+}
+
+/* Bouton de la Modale */
+.modal-action-btn {
+  all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  color: white;
+  background-color: #1d6154;
+  border-radius: 60px;
+  height: 36px;
+  width: 180px;
+  margin: 30px auto;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* Ajout de Photo */
+
+.photo-upload-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #e8f1f6;
+  border-radius: 3px;
+  color: #b9c5cc;
+  margin-bottom: 30px;
+  object-fit: contain;
+  overflow: hidden;
+  height: 175px;
+  width: 420px;
+}
+.photo-upload-container p {
+  color: #444;
+  text-align: center;
+  font-family: Work Sans;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 20px;
+}
+#photoPreview {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.fa-picture {
+  font-size: 4em;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+#photoUploadInput {
+  display: none;
+}
+.photo-add-form {
+  display: flex;
+  flex-direction: column;
+  width: 420px;
+  margin: 36px auto 0;
+}
+
+.photo-upload-label {
+  background: #cbd6dc;
+  color: #306685;
+  text-align: center;
+  font-family: Work Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 10px auto;
+  border-radius: 60px;
+  height: 36px;
+  width: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+label[for="photoCategory"] {
+  margin: 10px 0 0;
+}
+#photoTitle {
+  width: 100%;
+  height: 50px;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 3px;
+  padding-left: 10px;
+  box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
+}
+/* Inputs et Labels */
+input,
+select,
+textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.09);
+  border-radius: 3px;
+}
+select {
+  width: 100%;
+  height: 50px;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border-right: 20px solid #ffffff;
+  padding-left: 10px;
+  box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
+}
+label {
+  align-self: flex-start;
+  color: #3d3d3d;
+  font-family: "Work Sans", sans-serif;
+}
+
+/* Divers */
+.divider {
+  width: 430px;
+  height: 1px;
+  background-color: #b3b3b3;
+  margin: auto;
+  margin-top: 35px;
+}
+
+#submitPhoto {
+  all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  color: white;
+  background-color: #1d6154;
+
+  border-radius: 60px;
+  height: 36px;
+  width: 180px;
+  margin: 30px auto;
+  cursor: pointer;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}

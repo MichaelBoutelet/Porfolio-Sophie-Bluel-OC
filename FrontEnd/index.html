@@ -12,16 +12,35 @@
     />
     <meta name="description" content="" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/modal.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
+    <section id="black-container">
+      <div class="banner">
+        <p><i class="fa-regular fa-pen-to-square"></i>Mode édition</p>
+      </div>
+    </section>
     <header>
       <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
       <nav>
         <ul>
-          <li><a href="index.html#portfolio">projets</a></li>
-          <li><a href="index.html#contact">contact</a></li>
-          <li><a href="login.html" id="logDelog">login</a></li>
-          <li><img src="./assets/icons/instagram.png" alt="Instagram" /></li>
+          <ul>
+            <a href="index.html#portfolio">
+              <li>projets</li>
+            </a>
+            <a href="index.html#contact">
+              <li>contact</li>
+            </a>
+            <li><a href="login.html" class="loginButton">login</a></li>
+            <li><img src="./assets/icons/instagram.png" alt="Instagram" /></li>
+          </ul>
         </ul>
       </nav>
     </header>
@@ -50,7 +69,14 @@
         </article>
       </section>
       <section id="portfolio">
-        <h2>Mes Projets</h2>
+        <h2>
+          Mes Projets
+          <span class="edit-icon">
+            <i class="fa-regular fa-pen-to-square"></i>
+            <span>modifier</span>
+          </span>
+        </h2>
+        <div id="gallery"></div>
       </section>
       <section id="contact">
         <h2>Contact</h2>
@@ -74,17 +100,61 @@
         </ul>
       </nav>
     </footer>
-    <script
-      crossorigin="anonymous"
-      type="module"
-      src="./assets/js/main.js"
-      defer
-    ></script>
-    <!-- <script
-      crossorigin="anonymous"
-      type="module"
-      src="./assets/js/modal.js"
-      defer
-    ></script> -->
+
+    <!-- section pour mes modales -->
+    <div class="photo-modal-overlay hidden"></div>
+    <!-- Overlay pour les modales -->
+
+    <div class="photo-modal hidden" id="photoGalleryModal">
+      <i class="fas fa-times modal-close"></i>
+      <h2 class="modal-title">Galerie photo</h2>
+      <div class="gallery-container">
+        <!-- La galerie générée par JS sera ici -->
+      </div>
+      <div class="divider"></div>
+      <button class="btn modal-action-btn" id="openPhotoAddModal">
+        Ajouter une photo
+      </button>
+    </div>
+
+    <div class="photo-modal hidden" id="photoAddModal">
+      <i class="fas fa-arrow-left modal-back"></i>
+      <i class="fa-solid fa-xmark modal-close"></i>
+      <h2 class="modal-title">Ajout photo</h2>
+      <form class="photo-add-form">
+        <div class="photo-upload-container">
+          <img src="" alt="" id="photoPreview" class="hidden" />
+          <i class="fa-regular fa-image fa-picture photo-icon"></i>
+          <label
+            for="photoUploadInput"
+            class="photo-upload-label"
+            aria-hidden="true"
+            >+ Ajouter photo</label
+          >
+          <input
+            type="file"
+            name="file"
+            id="photoUploadInput"
+            required
+            accept=".jpg, .png, .jpeg"
+          />
+          <p class="taille-image">jpg, png: 4mo max</p>
+        </div>
+        <label for="photoTitle">Titre</label>
+        <input type="text" name="title" id="photoTitle" required />
+        <label for="photoCategory">Catégorie</label>
+        <select name="category" id="photoCategory" required></select>
+        <div class="divider"></div>
+        <input
+          type="submit"
+          class="btn submit-btn inactive"
+          id="submitPhoto"
+          value="valider"
+        />
+      </form>
+    </div>
+
+    <script type="module" src="assets/js/script.js"></script>
+    <script type="module" src="assets/js/modal.js"></script>
   </body>
 </html>
