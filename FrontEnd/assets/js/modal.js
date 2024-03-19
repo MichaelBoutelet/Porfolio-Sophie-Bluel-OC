@@ -94,6 +94,27 @@ const trash = async () => {
   });
 };
 
+const resetPhotoAddModal = () => {
+  // Réinitialise l'aperçu de l'image
+  const photoPreview = document.getElementById("photoPreview");
+  photoPreview.src = ""; // Ou mettre le chemin d'une image par défaut si nécessaire
+  photoPreview.classList.add("hidden");
+
+  // Réaffiche les éléments icon et label
+  const photoIcon = document.querySelector(".fa-picture");
+  const photoLabel = document.querySelector(".photo-upload-label");
+  const tailleImage = document.querySelector(".taille-image");
+  photoIcon.style.display = ""; // Ou "block" si c'était leur display initial
+  photoLabel.style.display = ""; // Ou "block"
+  tailleImage.style.display = ""; // Ou "block"
+
+  // Réinitialise le formulaire (facultatif, si vous voulez également effacer les champs de saisie)
+  document.querySelector(".photo-add-form").reset();
+
+  // Réinitialise l'état du bouton de soumission
+  updateButtonState();
+};
+
 const addPhotoModal = document.querySelector("#openPhotoAddModal");
 const photoGalleryModal = document.querySelector("#photoGalleryModal");
 const photoAddModal = document.getElementById("photoAddModal");
@@ -101,6 +122,7 @@ addPhotoModal.addEventListener("click", (e) => {
   setTimeout(() => {
     photoAddModal.classList.remove("hidden");
     photoGalleryModal.classList.add("hidden"); // Ouvrir la seconde modal
+    resetPhotoAddModal();
   }, 100);
   updateButtonState();
   // Délai de 100 millisecondes avant d'ouvrir la seconde modal
