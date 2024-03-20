@@ -16,7 +16,6 @@ export const getList = async () => {
   const works = await getWorks();
   displayCategories(categories, works);
   getFullCategories();
-
   displayWorks(works);
 };
 // gallery d'affichage
@@ -126,5 +125,3 @@ export const displayCategories = (categories, works) => {
     }
   }
 };
-
-

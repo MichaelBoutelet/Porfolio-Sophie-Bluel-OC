@@ -97,18 +97,18 @@ const trash = async () => {
 const resetPhotoAddModal = () => {
   // Réinitialise l'aperçu de l'image
   const photoPreview = document.getElementById("photoPreview");
-  photoPreview.src = ""; // Ou mettre le chemin d'une image par défaut si nécessaire
+  photoPreview.src = "";
   photoPreview.classList.add("hidden");
 
   // Réaffiche les éléments icon et label
   const photoIcon = document.querySelector(".fa-picture");
   const photoLabel = document.querySelector(".photo-upload-label");
   const tailleImage = document.querySelector(".taille-image");
-  photoIcon.style.display = ""; // Ou "block" si c'était leur display initial
-  photoLabel.style.display = ""; // Ou "block"
-  tailleImage.style.display = ""; // Ou "block"
+  photoIcon.style.display = "";
+  photoLabel.style.display = "";
+  tailleImage.style.display = "";
 
-  // Réinitialise le formulaire (facultatif, si vous voulez également effacer les champs de saisie)
+  // Réinitialise le formulaire
   document.querySelector(".photo-add-form").reset();
 
   // Réinitialise l'état du bouton de soumission
